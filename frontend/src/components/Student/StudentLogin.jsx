@@ -416,10 +416,9 @@ export const StudentLogin = ({
             type="button"
             className="admin-login-google-btn"
             onClick={() => {
-              const baseUrl =
-                import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
-              const authUrl = new URL("/api/auth/google", baseUrl).toString();
-              window.location.href = authUrl;
+              // Use relative URL to go through the Vite proxy
+              // This is safer and avoids "Dangerous site" warnings
+              window.location.href = "/api/auth/google";
             }}
           >
             <span className="google-icon">G</span>

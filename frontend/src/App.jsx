@@ -126,7 +126,7 @@ function App() {
   // ======================
 
   useEffect(() => {
-    document.title = "Blockchain Certificate Portal";
+    document.title = "AcademicChain Verification Portal";
     saveRedirectToken();
 
     // Check for email verification token in URL

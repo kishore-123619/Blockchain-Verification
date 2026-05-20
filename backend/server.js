@@ -7,6 +7,7 @@ import multer from "multer";
 
 import connectDB from "./src/config/db.js";
 import studentRoutes from "./src/routes/studentRoutes.js";
+import authRoutes from "./src/routes/authRoutes.js";
 import certificateRoutes from "./src/routes/certificateRoutes.js";
 import {
   forgotPassword,
@@ -53,7 +54,7 @@ startServer()
 
     // Routes
     app.use("/api/students", studentRoutes);
-    app.use("/api/auth", studentRoutes);
+    app.use("/api/auth", authRoutes);
 
     app.post("/api/auth/forgot-password", forgotPassword);
     app.post("/api/auth/forgotpassword", forgotPassword);
