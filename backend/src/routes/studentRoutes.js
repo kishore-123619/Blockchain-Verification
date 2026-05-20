@@ -43,7 +43,6 @@ router.post("/student-register", registerStudent);
 router.get("/verify-email/:token", verifyEmail);
 router.get("/google", googleAuthRedirect);
 router.get("/google/callback", googleAuthCallback);
-router.get("/auth/google/callback", googleAuthCallback); // Added for consistency with .env
 router.get("/facebook", facebookAuthRedirect);
 router.get("/facebook/callback", facebookAuthCallback);
 router.get("/debug", oauthDebugPage);
