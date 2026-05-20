@@ -12,6 +12,8 @@ import {
 import { authAPI } from "../../services/api";
 import "./AdminLogin.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api";
+
 export const AdminLogin = ({
   setView,
   handleAdminLogin,
@@ -401,9 +403,7 @@ export const AdminLogin = ({
             type="button"
             className="admin-login-google-btn"
             onClick={() => {
-              // Use relative URL to go through the Vite proxy
-              // This is safer and avoids "Dangerous site" warnings
-              window.location.href = "/api/auth/google";
+              window.location.href = `${API_BASE_URL}/auth/google`;
             }}
           >
             <span className="google-icon">G</span>
