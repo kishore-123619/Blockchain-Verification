@@ -1,0 +1,7 @@
+{
+  "name": "Certificate Chain",
+  "description": "A blockchain-based platform for issuing and verifying academic and professional certificates with immutability and transparency.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

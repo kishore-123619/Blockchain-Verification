@@ -1,0 +1,16 @@
+import axios from "axios";
+
+const testAdminLogin = async () => {
+  try {
+    const response = await axios.post("http://localhost:5000/api/auth/login", {
+      email: "admin@university.edu",
+      password: "admin123",
+    });
+
+    console.log("Login successful:", response.data);
+  } catch (error) {
+    console.error("Login failed:", error.response?.data || error.message);
+  }
+};
+
+testAdminLogin();

@@ -1,0 +1,268 @@
+.form-section {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #dbeafe 100%);
+}
+
+.form-container {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.form-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+
+.form-back-btn:hover {
+  color: #1e40af;
+}
+
+.form-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.form-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  border: 1.5px solid rgba(59, 130, 246, 0.15);
+  border-radius: 2.5rem;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+}
+
+.form-card-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.form-input {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(243, 244, 246, 0.95) 100%
+  );
+  border: 2px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: #1f2937;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #ffffff;
+}
+
+.form-input-full {
+  grid-column: span 2;
+}
+
+.form-select {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(243, 244, 246, 0.95) 100%
+  );
+  border: 2px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: #1f2937;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-select option {
+  color: #1f2937;
+  background-color: white;
+}
+
+.form-submit-btn {
+  width: 100%;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* Issue Certificate Specifics */
+.success-card {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.08) 0%,
+    rgba(52, 211, 153, 0.05) 100%
+  );
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: #047857;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #10b981;
+  margin: 0 auto 1rem;
+}
+
+.success-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #047857;
+}
+
+.success-text {
+  font-size: 0.875rem;
+  color: #065f46;
+}
+
+.hash-wrapper {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.08) 0%,
+    rgba(52, 211, 153, 0.05) 100%
+  );
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hash-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.hash-value {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #10b981;
+  word-break: break-all;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.qr-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.done-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.done-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.upload-wrapper {
+  grid-column: span 2;
+}
+
+.upload-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-input {
+  flex-grow: 1;
+  background-color: white;
+  border: 2px dashed rgba(59, 130, 246, 0.3);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: #3b82f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.upload-input:hover {
+  background-color: #f0f9ff;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.upload-text {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+}

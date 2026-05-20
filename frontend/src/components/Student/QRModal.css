@@ -1,0 +1,207 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-card,
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.99) 0%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+  border: 1.5px solid rgba(59, 130, 246, 0.2);
+  border-radius: 2.5rem;
+  padding: 3rem;
+  max-width: 28rem;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  padding: 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-close-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.modal-qr-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.modal-qr-card {
+  padding: 1.5rem;
+  background-color: white;
+  border: 3px solid #3b82f6;
+  border-radius: 2.5rem;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  line-height: 1.625;
+}
+
+.verification-result-card {
+  border-radius: 1.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+.verification-result-card.verified {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.verification-result-card.failed {
+  background-color: rgba(244, 63, 94, 0.08);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.verification-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+.verification-text {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.verification-subtext {
+  margin-top: 0.25rem;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.modal-verify-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3730a3, #2563eb);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.modal-verify-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  transform: translateY(-2px);
+}
+
+.modal-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(147, 197, 253, 0.06) 100%
+  );
+  border: 1.5px solid rgba(59, 130, 246, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #3b82f6;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-download-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(147, 197, 253, 0.1) 100%
+  );
+  transform: translateY(-2px);
+}
+
+.modal-share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 15px rgba(16, 185, 129, 0.2);
+}
+
+.modal-share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 20px rgba(16, 185, 129, 0.3);
+}
+
+.modal-warning {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+  color: #92400e;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.modal-warning code {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+}

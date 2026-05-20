@@ -1,0 +1,16 @@
+.app-main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #dbeafe 100%);
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.app-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-main ::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: #1e40af;
+}
