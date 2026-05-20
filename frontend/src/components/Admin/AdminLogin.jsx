@@ -401,7 +401,10 @@ export const AdminLogin = ({
             type="button"
             className="admin-login-google-btn"
             onClick={() => {
-              window.location.href = "/api/auth/google";
+              const baseUrl =
+                import.meta.env.VITE_API_BASE_URL || window.location.origin;
+              const authUrl = new URL("/api/auth/google", baseUrl).toString();
+              window.location.href = authUrl;
             }}
           >
             <span className="google-icon">G</span>

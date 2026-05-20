@@ -46,10 +46,10 @@ export const StudentLogin = ({
       return;
     }
 
-    const result = await handleStudentLogin({ 
-      identifier: trimmedIdentifier, 
+    const result = await handleStudentLogin({
+      identifier: trimmedIdentifier,
       password,
-      twoFactorToken: twoFactorRequired ? twoFactorToken : undefined
+      twoFactorToken: twoFactorRequired ? twoFactorToken : undefined,
     });
 
     if (result && result.twoFactorRequired) {
@@ -288,7 +288,9 @@ export const StudentLogin = ({
             <form onSubmit={handleSubmit} className="admin-login-form">
               <div className="admin-login-input-group">
                 <label>Two-Factor Authentication</label>
-                <p className="admin-login-note">Please enter the 6-digit code from your authenticator app.</p>
+                <p className="admin-login-note">
+                  Please enter the 6-digit code from your authenticator app.
+                </p>
 
                 <div className="admin-login-input-wrapper">
                   <Lock className="admin-login-icon" />
@@ -313,9 +315,9 @@ export const StudentLogin = ({
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <button 
-                type="button" 
-                className="admin-login-link mt-4" 
+              <button
+                type="button"
+                className="admin-login-link mt-4"
                 onClick={() => setTwoFactorRequired(false)}
               >
                 Back to regular login
@@ -332,97 +334,97 @@ export const StudentLogin = ({
               <div className="admin-login-input-group">
                 <label>Email or Roll Number</label>
 
-              <div className="admin-login-input-wrapper">
-                <Mail className="admin-login-icon" />
+                <div className="admin-login-input-wrapper">
+                  <Mail className="admin-login-icon" />
 
-                <input
-                  type="text"
-                  placeholder="Enter your email or roll number"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="admin-login-input"
-                />
+                  <input
+                    type="text"
+                    placeholder="Enter your email or roll number"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="admin-login-input"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="admin-login-input-group">
-              <label>Password</label>
+              <div className="admin-login-input-group">
+                <label>Password</label>
 
-              <div className="admin-login-input-wrapper">
-                <Lock className="admin-login-icon" />
+                <div className="admin-login-input-wrapper">
+                  <Lock className="admin-login-icon" />
 
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="admin-login-input"
-                />
+                  <input
+                    type="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="admin-login-input"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="admin-login-extra-row">
-              <label className="admin-login-remember">
-                <input
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => setRememberMe(e.target.checked)}
-                />
-                Remember me
-              </label>
+              <div className="admin-login-extra-row">
+                <label className="admin-login-remember">
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                  />
+                  Remember me
+                </label>
+
+                <button
+                  onClick={() => {
+                    setMessage("");
+                    setError("");
+                    setForgotPasswordMode(true);
+                  }}
+                  className="admin-login-link admin-login-forgot-link"
+                  type="button"
+                >
+                  Forgot password?
+                </button>
+              </div>
 
               <button
-                onClick={() => {
-                  setMessage("");
-                  setError("");
-                  setForgotPasswordMode(true);
-                }}
-                className="admin-login-link admin-login-forgot-link"
-                type="button"
+                type="submit"
+                className="admin-login-submit-btn"
+                disabled={loading}
               >
-                Forgot password?
+                {loading ? "Logging in..." : "Login"}
+                <ArrowRight className="w-5 h-5" />
               </button>
-            </div>
 
-            <button
-              type="submit"
-              className="admin-login-submit-btn"
-              disabled={loading}
-            >
-              {loading ? "Logging in..." : "Login"}
-              <ArrowRight className="w-5 h-5" />
-            </button>
-
-            {(error || loginError) && (
-              <div className="admin-login-alert admin-login-alert-error">
-                {error || loginError}
-              </div>
-            )}
-            {message && !forgotPasswordMode && (
-              <div className="admin-login-alert admin-login-alert-success">
-                {message}
-              </div>
-            )}
+              {(error || loginError) && (
+                <div className="admin-login-alert admin-login-alert-error">
+                  {error || loginError}
+                </div>
+              )}
+              {message && !forgotPasswordMode && (
+                <div className="admin-login-alert admin-login-alert-success">
+                  {message}
+                </div>
+              )}
             </form>
-            )}
+          )}
 
-            <div className="admin-login-social-divider">
+          <div className="admin-login-social-divider">
             <span>or continue with</span>
-            </div>
+          </div>
 
-            <button
+          <button
             type="button"
             className="admin-login-google-btn"
             onClick={() => {
-              const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-              const authUrl = baseUrl.replace('/api', '/api/auth/google');
+              const baseUrl =
+                import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+              const authUrl = new URL("/api/auth/google", baseUrl).toString();
               window.location.href = authUrl;
             }}
-            >
+          >
             <span className="google-icon">G</span>
             Continue with Google
-            </button>
-
+          </button>
         </div>
       </div>
     </div>

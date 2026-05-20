@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -43,6 +43,10 @@ startServer()
     app.use(cors());
     app.use(express.json());
     app.use(passport.initialize());
+
+    app.get("/", (req, res) => {
+      res.send("Backend API is running");
+    });
 
     // Static folder for uploads
     app.use("/uploads", express.static(path.join(__dirname, "uploads")));
