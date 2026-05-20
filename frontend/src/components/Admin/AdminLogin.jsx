@@ -402,7 +402,7 @@ export const AdminLogin = ({
             className="admin-login-google-btn"
             onClick={() => {
               const baseUrl =
-                import.meta.env.VITE_API_BASE_URL || window.location.origin;
+                import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
               const authUrl = new URL("/api/auth/google", baseUrl).toString();
               window.location.href = authUrl;
             }}
