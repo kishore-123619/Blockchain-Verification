@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, ".", "");
   return {
-    plugins: [react(), tailwindcss(), basicSsl()],
+    plugins: [react(), tailwindcss()],
     define: {
       "process.env.GEMINI_API_KEY": JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -20,19 +20,13 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
-      open:"chrome",
+      open: "chrome",
       hmr: process.env.DISABLE_HMR !== "true",
       proxy: {
         "/api": {
           target: "http://localhost:5000",
           changeOrigin: true,
           secure: false,
-        },
-      },
-    },
-  };
-});
-
         },
       },
     },
