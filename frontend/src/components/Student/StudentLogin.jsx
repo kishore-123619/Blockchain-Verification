@@ -4,9 +4,9 @@ import { ChevronLeft, Mail, Lock, ArrowRight, Key } from "lucide-react";
 import { authAPI } from "../../services/api";
 import "./StudentLogin.css";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://blockchain-verification-x6sp.onrender.com/api";
+const BACKEND_ORIGIN =
+  import.meta.env.VITE_API_BASE_URL?.replace(/\/api$/, "") ||
+  "https://blockchain-verification-x6sp.onrender.com";
 
 export const StudentLogin = ({
   email,
@@ -420,7 +420,7 @@ export const StudentLogin = ({
             type="button"
             className="admin-login-google-btn"
             onClick={() => {
-              window.location.href = `${API_BASE_URL}/auth/google`;
+              window.location.href = `${BACKEND_ORIGIN}/api/auth/google`;
             }}
           >
             <span className="google-icon">G</span>
